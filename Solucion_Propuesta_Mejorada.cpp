@@ -15,19 +15,19 @@ struct ConsoleBox {
     void set_text(const string &text) { cout << text << endl; }
 };
 
-ConsoleBox *consoleBox = new ConsoleBox; // suponemos que ya está inicializado
+ConsoleBox *consoleBox = new ConsoleBox;
 
 bool is_filename_valid(const char* filename) {
     if (!filename || std::strlen(filename) == 0 || std::strlen(filename) >= 500) {
         return false;
     }
-    // Añade aquí más reglas si es necesario.
+
     return true;
 }
 
 void load_script(const char* filename, bool show_script = false) {
     if (!is_filename_valid(filename)) {
-        cerr << "Nombre de archivo no válido o demasiado largo: " << filename << endl;
+        cerr << "Nombre de archivo no valido o demasiado largo: " << filename << endl;
         return;
     }
 
@@ -48,7 +48,7 @@ void load_script(const char* filename, bool show_script = false) {
         }
 
         if (feof(f) && script.empty()) {
-            cerr << "Archivo vacío: " << filename << endl;
+            cerr << "Archivo vacio: " << filename << endl;
             fclose(f);
             return;
         }
@@ -73,7 +73,7 @@ void load_script(const char* filename, bool show_script = false) {
         consoleBox->set_text(script);
     }
     catch (...) {
-        cerr << "Excepción durante la operación con el archivo" << endl;
+        cerr << "Excepcion durante la operacion con el archivo" << endl;
         if (f) fclose(f);
     }
 }
