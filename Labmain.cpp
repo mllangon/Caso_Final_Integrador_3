@@ -9,7 +9,7 @@ bool is_filename_valid(const string& filename) {
 
 void load_script(const char* filename, bool show_script = false) {
     if (!is_filename_valid(filename)) {
-        cout << "Nombre de archivo no válido." << endl;
+        cout << "Nombre de archivo no valido." << endl;
         return;
     }
 
@@ -43,7 +43,7 @@ void load_script() {
     getline(cin, filename);
 
     if (!is_filename_valid(filename)) {
-        cout << "Nombre de archivo no válido." << endl;
+        cout << "Nombre de archivo no valido." << endl;
         return;
     }
 
