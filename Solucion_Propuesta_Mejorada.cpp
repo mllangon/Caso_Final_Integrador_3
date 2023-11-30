@@ -65,3 +65,27 @@ void load_script(const char* filename, bool show_script = false) {
         }
         f = nullptr;
 
+        if (show_script) {
+            cout << ColorConsole::fg_blue << ColorConsole::bg_white;
+            cout << script << endl;
+        }
+        consoleBox->new_text();
+        consoleBox->set_text(script);
+    }
+    catch (...) {
+        cerr << "Excepción durante la operación con el archivo" << endl;
+        if (f) fclose(f);
+    }
+}
+
+void load_script() {
+    char filename[500];
+    printf("Archivo: ");
+    scanf("%499s", filename);
+    load_script(filename, true);
+}
+
+int main() {
+    load_script();
+    return 0;
+}
