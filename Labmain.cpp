@@ -32,3 +32,20 @@ void load_script(const char* filename, bool show_script = false){
     }
     file.close();
 }
+void load_script(){
+    string filename;
+    cout << "Ingrese el nombre del archivo: ";
+    getline(cin, filename);
+
+    if (!is_filename_valid(filename)){
+        cout << "Nombre no encontrado: " << endl;
+        return;
+    }
+
+    load.script(filename.c_str(), true);
+}
+
+int main(){
+    load_script();
+    return 0;
+}
